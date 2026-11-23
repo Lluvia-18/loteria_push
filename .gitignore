@@ -1,10 +1,7 @@
-app/.dart_tool/
-app/build/
-app/.flutter-plugins-dependencies
+.dart_tool/
+build/
+.flutter-plugins-dependencies
 server/node_modules/
 server/*.log
 .idea/
 *.iml
-
-# Copia original anidada; el proyecto final está en esta raíz.
-/loteria_push/

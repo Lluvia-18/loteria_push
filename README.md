@@ -15,7 +15,7 @@ La aplicación puede ejecutarse localmente sin Firebase. En ese modo consulta pe
 ## Arquitectura
 
 - `server/`: servidor Node.js, reglas, salas, mensajes push y API HTTP.
-- `app/`: aplicación Flutter, dominio, adaptadores de Firebase/HTTP y pantallas.
+- `lib/`, `android/`, `ios/` y `test/`: aplicación Flutter, dominio, adaptadores de Firebase/HTTP, plataformas y pruebas.
 - El servidor decide cartas, ganadores, permisos del cantor y frenos contra abuso.
 - La app trata cada push como información no confiable y consulta el estado real cuando detecta huecos.
 - El modo local degrada correctamente cuando Firebase todavía no está configurado.
@@ -157,7 +157,6 @@ El servidor queda disponible en `http://localhost:8080`. Sin credenciales Fireba
 En otra terminal:
 
 ```powershell
-cd app
 flutter pub get
 flutter analyze
 flutter test
@@ -173,7 +172,6 @@ La app funciona sin Firebase mediante `PuertoSinFirebase`. Para activar notifica
 ```powershell
 firebase login
 dart pub global activate flutterfire_cli
-cd app
 flutterfire configure
 ```
 

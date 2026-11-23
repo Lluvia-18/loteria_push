@@ -5,7 +5,7 @@ const { spawnSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const APP = path.join(__dirname, 'app');
+const APP = __dirname;
 const win = process.platform === 'win32';
 
 function correr(cmd, args, { cwd = APP, fatal = true } = {}) {
@@ -90,7 +90,7 @@ console.log(`
 ==================== SIGUIENTE (necesita TU cuenta de Firebase) ====================
   firebase login
   dart pub global activate flutterfire_cli
-  cd app
+  cd ${APP}
   flutterfire configure      (acepta sobrescribir lib/firebase_options.dart)
 
 Después, con el servidor corriendo (1_iniciar_servidor):
