@@ -1,36 +1,8 @@
 # Lotería Push
 
-Juego de Lotería mexicana con un cantor ejecutado en un servidor Node.js y una aplicación Flutter para Android/iOS. El servidor conserva la verdad de la partida y las notificaciones push funcionan únicamente como avisos: la app puede recuperar cartas perdidas, ignorar duplicados y volver a sincronizarse.
 
-**Autora:** Lluvia Villanueva - GitHub: [Lluvia-18](https://github.com/Lluvia-18)
+**Autora:** Lluvia Villanueva
 
-## Aplicación terminada
-
-La aplicación puede ejecutarse localmente sin Firebase. En ese modo consulta periódicamente al servidor y permite crear una sala, unirse como jugador, recibir las cartas cantadas y reclamar Lotería. Al configurar Firebase, también admite avisos push reales.
-
-<p align="center">
-  <img src="docs/images/tdd/app-final.png" alt="Lotería Push ejecutándose en Android" width="360">
-</p>
-
-## Arquitectura
-
-- `server/`: servidor Node.js, reglas, salas, mensajes push y API HTTP.
-- `lib/`, `android/`, `ios/` y `test/`: aplicación Flutter, dominio, adaptadores de Firebase/HTTP, plataformas y pruebas.
-- El servidor decide cartas, ganadores, permisos del cantor y frenos contra abuso.
-- La app trata cada push como información no confiable y consulta el estado real cuando detecta huecos.
-- El modo local degrada correctamente cuando Firebase todavía no está configurado.
-
-## Resultado de las pruebas
-
-| Componente | Pruebas | Resultado |
-| --- | ---: | --- |
-| Servidor Node.js | 61 | Aprobadas |
-| Aplicación Flutter | 52 | Aprobadas |
-| **Total** | **113** | **Todas aprobadas** |
-
-## Ciclos TDD
-
-Cada ciclo incluye una fase roja real, obtenida retirando temporalmente la implementación en una copia de evidencia, y una fase verde ejecutada con la implementación restaurada. Las capturas muestran el código, la terminal completa y el usuario Git `Lluvia-18`.
 
 ### Ciclo 1 - Baraja y tablas
 
@@ -177,15 +149,9 @@ flutterfire configure
 
 La cuenta de servicio de Firebase pertenece únicamente al servidor. Nunca debe incluirse dentro de la app, GitHub, capturas o mensajes.
 
-## Verificación final
+## Aplicación terminada
 
-- Node.js 20 o superior: 61 pruebas aprobadas.
-- `flutter analyze`: sin problemas.
-- Flutter: 52 pruebas aprobadas.
-- APK de depuración compilado con Android SDK 37.
-- Aplicación instalada y ejecutada en `emulator-5554`.
-- Servidor local ejecutado en el puerto 8080.
+<p align="center">
+  <img src="docs/images/tdd/app-final.png" alt="Lotería Push ejecutándose en Android" width="360">
+</p>
 
-## Privacidad y seguridad
-
-Los temas de FCM son públicos y ninguna notificación debe contener secretos. El servidor valida ganadores, claves y destinos; elimina tokens muertos cuando corresponde y limita la frecuencia de los cantos. Las notificaciones pueden aparecer en la pantalla bloqueada, por lo que sólo contienen información apropiada para mostrarse públicamente.
