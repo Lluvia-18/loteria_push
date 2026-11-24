@@ -155,3 +155,7 @@ La cuenta de servicio de Firebase pertenece únicamente al servidor. Nunca debe 
   <img src="docs/images/tdd/app-final.png" alt="Lotería Push ejecutándose en Android" width="360">
 </p>
 
+<img width="645" height="1112" alt="image" src="https://github.com/user-attachments/assets/4419a319-34e7-4391-bf66-ed0a25ca6c95" />
+<img width="738" height="1600" alt="WhatsApp Image 2026-11-24 at 14 32 21" src="https://github.com/user-attachments/assets/6edbf667-e44b-43aa-a860-09f713098240" />
+
+
